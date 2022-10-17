@@ -1,5 +1,6 @@
 import React from 'react';
 import './Arena.css';
+import { Grid, Button, Typography } from '@mui/material'
 import Fighter from './Fighter';
 import FighterSelector from './FighterSelector';
 
@@ -22,16 +23,22 @@ class Arena extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <div className='LeftFighter' >
+      <Grid container spacing={2}>
+        <Grid item xs={12}>
+          <Typography variant='h3' align='center'>Ruokarähinä</Typography>
+        </Grid>
+        <Grid item xs>
           <FighterSelector setFighter={this.setFighter1} />
           <Fighter fighterName={this.state.fighter1Name} />
-        </div>
-        <div className='RightFigter'>
+        </Grid>
+        <Grid item xs={1}>
+          <Button variant="contained" fullWidth>FIGHT</Button>
+        </Grid>
+        <Grid item xs>
           <FighterSelector setFighter={this.setFighter2} />
           <Fighter fighterName={this.state.fighter2Name} />
-        </div>
-      </div>
+        </Grid>
+      </Grid>
     )
   }
 }

@@ -1,26 +1,40 @@
 import React from 'react';
-import './Arena.css';
+import { Autocomplete, TextField } from '@mui/material'
+import { listFighters } from './integrations/backendApi'
 
 class FighterSelector extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { selectedFighter: '' }
+    this.state = { fighters: [] }
   }
 
-  handleChange = event => {
+  handleInputChange = async (event) => {
+    const fighterOptions = []
+    const fighterNames = await listFighters(event.target.value)
+    let i = 1
+    for (const name of fighterNames) {
+      fighterOptions.push({ label: name, id: i })
+      i++
+    }
     this.setState({
-      selectedFighter: event.target.value
+      fighters: fighterOptions
     })
+  };
+
+  handleValueChange = async (event, value) => {
+    this.props.setFighter(value.label)
   };
 
   render() {
     return (
-      <div className="FighterSelector" >
-        <div className="Search">
-          <input type="text" onChange={this.handleChange} placeholder="Choose fighter..." />
-          <button onClick={() => this.props.setFighter(this.state.selectedFighter)}>Search</button>
-        </div>
-      </div>
+      <Autocomplete
+        fullWidth
+        disablePortal
+        options={this.state.fighters}
+        onInputChange={this.handleInputChange}
+        onChange={this.handleValueChange}
+        renderInput={(params) => <TextField {...params} label="Choose fighter" />}
+      />
     )
   }
 }
