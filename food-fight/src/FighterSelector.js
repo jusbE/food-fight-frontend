@@ -1,6 +1,6 @@
 import React from 'react';
 import { Autocomplete, TextField } from '@mui/material'
-import { listFighters } from './integrations/backendApi'
+import { listFighters, getFighter } from './integrations/backendApi'
 
 class FighterSelector extends React.Component {
   constructor(props) {
@@ -22,7 +22,8 @@ class FighterSelector extends React.Component {
   };
 
   handleValueChange = async (event, value) => {
-    this.props.setFighter(value.label)
+    const fighter = await getFighter(value.label)
+    this.props.setFighter(fighter.name, fighter.appearance)
   };
 
   render() {
