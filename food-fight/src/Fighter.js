@@ -4,6 +4,7 @@ function Fighter(props) {
   return (
       <Card sx={{}}>
         <CardMedia
+          height={400}
           component="img"
           image={props.fighterLink}
         />

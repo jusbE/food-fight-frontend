@@ -29,20 +29,31 @@ class Arena extends React.Component {
 
   render() {
     return (
-      <Grid container spacing={2}>
+      <Grid container spacing={1}>
         <Grid item xs={12}>
           <Typography variant='h3' align='center'>Ruokarähinä</Typography>
         </Grid>
-        <Grid item xs>
-          <FighterSelector setFighter={this.setFighter1} />
-          <Fighter fighterName={this.state.fighter1.name} fighterLink={this.state.fighter1.link} />
+        <Grid item xs={6}>
+          <Grid container spacing={1}>
+            <Grid item xs={12}>
+              <FighterSelector setFighter={this.setFighter1} />
+            </Grid>
+            <Grid item xs={12}>
+              <FighterSelector setFighter={this.setFighter2} />
+            </Grid>
+            <Grid item xs={6}>
+              <Fighter fighterName={this.state.fighter1.name} fighterLink={this.state.fighter1.link} />
+            </Grid>
+            <Grid item xs={6}>
+              <Fighter fighterName={this.state.fighter2.name} fighterLink={this.state.fighter2.link} />
+            </Grid>
+            <Grid item xs={12}>
+              <Button variant="contained" fullWidth>FIGHT</Button>
+            </Grid>
+          </Grid>
         </Grid>
-        <Grid item xs={1}>
-          <Button variant="contained" fullWidth>FIGHT</Button>
-        </Grid>
-        <Grid item xs>
-          <FighterSelector setFighter={this.setFighter2} />
-          <Fighter fighterName={this.state.fighter2.name} fighterLink={this.state.fighter2.link} />
+        <Grid item xs={6}>
+          Battlelog here...
         </Grid>
       </Grid>
     )
