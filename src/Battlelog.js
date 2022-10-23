@@ -28,7 +28,7 @@ class Battlelog extends React.Component {
             })}
           </List >
           <Typography gutterBottom variant="h5">
-            Voittaja: {this.props.battleLog.winner}
+            {this.props.battleLog ? `${this.props.battleLog.winner} on voittaja!` : ''}
           </Typography>
         </CardContent>
       </Card>
