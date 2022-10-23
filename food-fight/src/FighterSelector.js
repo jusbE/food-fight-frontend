@@ -34,7 +34,7 @@ class FighterSelector extends React.Component {
         options={this.state.fighters}
         onInputChange={this.handleInputChange}
         onChange={this.handleValueChange}
-        renderInput={(params) => <TextField {...params} label="Choose fighter" />}
+        renderInput={(params) => <TextField {...params} label="Valitse taistelija..." />}
       />
     )
   }
