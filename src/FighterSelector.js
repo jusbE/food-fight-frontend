@@ -23,7 +23,7 @@ class FighterSelector extends React.Component {
 
   handleValueChange = async (event, value) => {
     const fighter = await getFighter(value.label)
-    this.props.setFighter(fighter.name, fighter.appearance)
+    this.props.setFighter(fighter)
   };
 
   render() {

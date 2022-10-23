@@ -10,23 +10,17 @@ class Arena extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      fighter1: {
-        name: '',
-        link: '',
-      },
-      fighter2: {
-        name: '',
-        link: '',
-      },
+      fighter1: {},
+      fighter2: {},
     }
   }
 
-  setFighter1 = (name, link) => {
-    this.setState({ ...this.state, fighter1: { ...this.state.fighter1, name, link } })
+  setFighter1 = (fighter) => {
+    this.setState({ ...this.state, fighter1: fighter })
   }
 
-  setFighter2 = (name, link) => {
-    this.setState({ ...this.state, fighter2: { ...this.state.fighter2, name, link } })
+  setFighter2 = (fighter) => {
+    this.setState({ ...this.state, fighter2: fighter })
   }
 
   writeBattlelog = async () => {
@@ -50,10 +44,10 @@ class Arena extends React.Component {
               <FighterSelector setFighter={this.setFighter2} />
             </Grid>
             <Grid item xs={6}>
-              <Fighter fighterName={this.state.fighter1.name} fighterLink={this.state.fighter1.link} />
+              <Fighter fighter={this.state.fighter1} />
             </Grid>
             <Grid item xs={6}>
-              <Fighter fighterName={this.state.fighter2.name} fighterLink={this.state.fighter2.link} />
+              <Fighter fighter={this.state.fighter2} />
             </Grid>
             <Grid item xs={12}>
               <Button onClick={this.writeBattlelog} variant="contained" fullWidth>FIGHT</Button>
