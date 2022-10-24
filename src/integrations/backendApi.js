@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BACKEND_BASE_URL = 'http://food-fight-backend.herokuapp.com';
+const BACKEND_BASE_URL = 'https://food-fight-backend.herokuapp.com';
 
 export const listFighters = async (name) => {
   const endpoint = `${BACKEND_BASE_URL}/fighterNames`
