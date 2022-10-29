@@ -33,7 +33,7 @@ class Arena extends React.Component {
     return (
       <Grid container spacing={1}>
         <Grid item xs={12}>
-          <Typography variant='h3'>Ruokarähinä</Typography>
+          <Typography variant='h3'>Food Fight</Typography>
         </Grid>
         <Grid item xs={6}>
           <Grid container spacing={1}>

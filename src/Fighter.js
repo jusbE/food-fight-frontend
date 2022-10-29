@@ -14,16 +14,16 @@ const renderFighter = (fighter) => {
         </Typography>
         <List>
           <ListItemText
-            primary={`Elämäpisteet ${fighter.health}`}
+            primary={`Health ${fighter.health}`}
           />
           <ListItemText
-            primary={`Hyökkäys ${fighter.attack}`}
+            primary={`Attack ${fighter.attack}`}
           />
           <ListItemText
-            primary={`Puolustus ${fighter.defence}`}
+            primary={`Defence ${fighter.defence}`}
           />
           <ListItemText
-            primary={`Nopeus ${fighter.speed}`}
+            primary={`Speed ${fighter.speed}`}
           />
         </List>
       </CardContent>

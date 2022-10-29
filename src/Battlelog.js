@@ -20,7 +20,7 @@ class Battlelog extends React.Component {
       <Card>
         <CardContent>
           <Typography sx={{ fontSize: 16 }} color="text.secondary" gutterBottom>
-            Loki
+            Battlelog
           </Typography>
           <List>
             {this.props.battleLog?.events?.map(logEvent => {
@@ -28,7 +28,7 @@ class Battlelog extends React.Component {
             })}
           </List >
           <Typography gutterBottom variant="h5">
-            {this.props.battleLog ? `${this.props.battleLog.winner} on voittaja!` : ''}
+            {this.props.battleLog ? `${this.props.battleLog.winner} is a winner!` : ''}
           </Typography>
         </CardContent>
       </Card>
