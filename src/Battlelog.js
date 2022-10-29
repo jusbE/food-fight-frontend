@@ -23,7 +23,7 @@ class Battlelog extends React.Component {
             Loki
           </Typography>
           <List>
-            {this.props.battleLog?.events.map(logEvent => {
+            {this.props.battleLog?.events?.map(logEvent => {
               return this.renderLogEvent(logEvent)
             })}
           </List >
